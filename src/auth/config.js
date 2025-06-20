@@ -1,1 +1,0 @@
-export const CIVIC_CLIENT_ID = "a5f60db4-0777-4292-9dc5-b91ca69d4333";
