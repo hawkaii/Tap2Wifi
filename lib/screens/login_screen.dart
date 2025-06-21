@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:civic_auth_flutter/app_routes.dart';
 import 'package:civic_auth_flutter/services/api_services.dart';
@@ -165,43 +166,49 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 40),
 
                 // 🔐 Update WiFi Button
-                Obx(
-                  () =>
-                      authService.isLoading.value
-                          ? const CircularProgressIndicator(color: Colors.white)
-                          : ElevatedButton.icon(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange,
-                              foregroundColor: Colors.white,
-                              minimumSize: const Size(double.infinity, 50),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                            ),
-                            onPressed: () async {
-                              final success = await authService.signIn();
-                              if (success) {
-                                Get.offAllNamed(AppRoutes.home);
-                              }
-                            },
-                            icon: const Icon(Icons.wifi_protected_setup),
-                            label: const Text("Authenticate for Update"),
-                          ),
-                ),
+                // Obx(
+                //   () =>
+                //       authService.isLoading.value
+                //           ? const CircularProgressIndicator(color: Colors.white)
+                //           : ElevatedButton.icon(
+                //             style: ElevatedButton.styleFrom(
+                //               backgroundColor: Colors.orange,
+                //               foregroundColor: Colors.white,
+                //               minimumSize: const Size(double.infinity, 50),
+                //               shape: RoundedRectangleBorder(
+                //                 borderRadius: BorderRadius.circular(12),
+                //               ),
+                //             ),
+                //             onPressed: () async {
+                //               final success = await authService.signIn();
+                //               if (success) {
+                //                 Get.offAllNamed(AppRoutes.home);
+                //               }
+                //             },
+                //             icon: const Icon(Icons.wifi_protected_setup),
+                //             label: const Text("Authenticate for Update"),
+                //           ),
+                // ),
 
                 // ❗ Error Message
-                Obx(
-                  () =>
-                      authService.errorMessage.value.isNotEmpty
-                          ? Padding(
-                            padding: const EdgeInsets.only(top: 20),
-                            child: Text(
-                              authService.errorMessage.value,
-                              style: const TextStyle(color: Colors.redAccent),
-                              textAlign: TextAlign.center,
-                            ),
-                          )
-                          : const SizedBox.shrink(),
+                // Obx(
+                //   () =>
+                //       authService.errorMessage.value.isNotEmpty
+                //           ? Padding(
+                //             padding: const EdgeInsets.only(top: 20),
+                //             child: Text(
+                //               authService.errorMessage.value,
+                //               style: const TextStyle(color: Colors.redAccent),
+                //               textAlign: TextAlign.center,
+                //             ),
+                //           )
+                //           : const SizedBox.shrink(),
+                // ),
+                ElevatedButton(
+                  onPressed: () {
+                    Get.toNamed(AppRoutes.updateWifi);
+                  },
+                  child: Text("update wifi"),
                 ),
               ],
             ),

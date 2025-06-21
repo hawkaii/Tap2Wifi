@@ -1,6 +1,7 @@
 import 'package:civic_auth_flutter/screens/home_screen.dart';
 import 'package:civic_auth_flutter/screens/login_screen.dart';
 import 'package:civic_auth_flutter/screens/splash_screen.dart';
+import 'package:civic_auth_flutter/screens/updateWifi.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRoutes {
@@ -10,9 +11,11 @@ class AppRoutes {
   // Add more routes here as needed
   static const String login = '/login';
   static const String settings = '/settings';
+  static const String updateWifi = '/updateWifi';
   static final List<GetPage> pages = [
     GetPage(name: splash, page: () => const SplashScreen()),
     GetPage(name: home, page: () => HomeScreen()),
     GetPage(name: login, page: () => LoginScreen()),
+    GetPage(name: updateWifi, page: () => WiFiEntryPage()),
   ];
 }
