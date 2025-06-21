@@ -1,15 +1,13 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
 
 android {
     namespace = "com.example.civic_auth_flutter"
     compileSdk = flutter.compileSdkVersion
-   // ndkVersion = flutter.ndkVersion
-    ndkVersion = "27.0.12077973"
+    // ndkVersion = "27.0.12077973" // Optional: Remove if not using native libs (recommended to remove if not needed)
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -21,21 +19,18 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.civic_auth_flutter"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
-        manifestPlaceholders.put("appAuthRedirectScheme", "civicdemo")
+
+        // ✅ Correct way to assign manifest placeholders for flutter_appauth
+        manifestPlaceholders["appAuthRedirectScheme"] = "trustlink"
     }
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
         }
     }
@@ -43,4 +38,13 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    // These are often needed but not strictly for flutter_appauth's core redirect.
+    // Keep them if you use other Google services or a general dependency.
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("com.google.android.gms:play-services-base:18.2.0")
+    // ✅ This is REQUIRED for Chrome Custom Tabs, which flutter_appauth uses.
+    implementation("androidx.browser:browser:1.6.0")
 }

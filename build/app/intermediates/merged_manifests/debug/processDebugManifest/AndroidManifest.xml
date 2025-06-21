@@ -13,12 +13,13 @@
          to allow setting breakpoints, to provide hot reload, etc.
     -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- Required for text processing plugins -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <queries>
         <intent>
-            <action android:name="android.intent.action.PROCESS_TEXT" />
-
-            <data android:mimeType="text/plain" />
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
         </intent>
         <intent>
             <action android:name="android.intent.action.VIEW" />
@@ -26,6 +27,18 @@
             <category android:name="android.intent.category.BROWSABLE" />
 
             <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.APP_BROWSER" />
+
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT" />
+
+            <data android:mimeType="text/plain" />
         </intent>
     </queries>
 
@@ -39,31 +52,54 @@
         android:name="android.app.Application"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
+        android:enableOnBackInvokedCallback="true"
         android:extractNativeLibs="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="civic_auth_flutter" >
+        android:label="Civic Auth" >
         <activity
             android:name="com.example.civic_auth_flutter.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:exported="true"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
-            android:taskAffinity=""
             android:theme="@style/LaunchTheme"
             android:windowSoftInputMode="adjustResize" >
             <meta-data
                 android:name="io.flutter.embedding.android.NormalTheme"
                 android:resource="@style/NormalTheme" />
 
-            <!-- Main launcher -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <!-- Civic OAuth redirect intent filter -->
-            <intent-filter android:autoVerify="true" >
+            <meta-data
+                android:name="flutter_appauth_redirect_scheme"
+                android:value="trustlink" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="callback"
+                    android:scheme="trustlink" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="net.openid.appauth.AuthorizationManagementActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboard|keyboardHidden"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.AppCompat.Translucent.NoTitleBar" />
+        <activity
+            android:name="net.openid.appauth.RedirectUriReceiverActivity"
+            android:excludeFromRecents="true"
+            android:exported="true" >
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -79,25 +115,45 @@
             android:name="flutterEmbedding"
             android:value="2" />
 
-        <activity
-            android:name="net.openid.appauth.RedirectUriReceiverActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Translucent.NoTitleBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="civicdemo" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="net.openid.appauth.AuthorizationManagementActivity"
-            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboard|keyboardHidden"
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.civic_auth_flutter.fileprovider"
             android:exported="false"
-            android:launchMode="singleTask"
-            android:theme="@style/Theme.AppCompat.Translucent.NoTitleBar" />
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <service
+            android:name="com.baseflow.geolocator.GeolocatorLocationService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="location" />
+
+        <activity
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--
+            Service handling Google Sign-In user revocation. For apps that do not integrate with
+            Google Sign-In, this service will never be started.
+        -->
+        <service
+            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+            android:exported="true"
+            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+            android:visibleToInstantApps="true" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <uses-library
             android:name="androidx.window.extensions"

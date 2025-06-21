@@ -13,209 +13,293 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->/Users/princekumar/Desktop/civic_auth_flutter/android/app/src/debug/AndroidManifest.xml:6:5-66
-15-->/Users/princekumar/Desktop/civic_auth_flutter/android/app/src/debug/AndroidManifest.xml:6:22-64
-16    <!-- Required for text processing plugins -->
-17    <queries>
-17-->/Users/princekumar/Desktop/civic_auth_flutter/android/app/src/main/AndroidManifest.xml:46:5-51:15
-18        <intent>
-18-->/Users/princekumar/Desktop/civic_auth_flutter/android/app/src/main/AndroidManifest.xml:47:9-50:18
-19            <action android:name="android.intent.action.PROCESS_TEXT" />
-19-->/Users/princekumar/Desktop/civic_auth_flutter/android/app/src/main/AndroidManifest.xml:48:13-73
-19-->/Users/princekumar/Desktop/civic_auth_flutter/android/app/src/main/AndroidManifest.xml:48:21-70
-20
-21            <data android:mimeType="text/plain" />
-21-->/Users/princekumar/Desktop/civic_auth_flutter/android/app/src/main/AndroidManifest.xml:49:13-51
-21-->/Users/princekumar/Desktop/civic_auth_flutter/android/app/src/main/AndroidManifest.xml:49:19-48
-22        </intent>
-23        <intent>
-23-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:25:9-31:18
-24            <action android:name="android.intent.action.VIEW" />
-24-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:26:13-65
-24-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:26:21-62
-25
-26            <category android:name="android.intent.category.BROWSABLE" />
-26-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:28:13-74
-26-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:28:23-71
-27
-28            <data android:scheme="https" />
-28-->/Users/princekumar/Desktop/civic_auth_flutter/android/app/src/main/AndroidManifest.xml:49:13-51
-29        </intent>
-30    </queries>
-31
-32    <permission
-32-->[androidx.core:core:1.13.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
-33        android:name="com.example.civic_auth_flutter.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-33-->[androidx.core:core:1.13.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
-34        android:protectionLevel="signature" />
-34-->[androidx.core:core:1.13.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+15-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:5:5-66
+15-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:5:22-64
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:6:5-78
+16-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:6:22-76
+17    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+17-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:7:5-78
+17-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:7:22-76
+18    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+18-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:8:1-76
+18-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:8:18-74
+19
+20    <queries>
+20-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:80:5-98:15
+21        <intent>
+21-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:81:9-83:18
+22            <action android:name="android.support.customtabs.action.CustomTabsService" />
+22-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:82:13-90
+22-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:82:21-87
+23        </intent>
+24        <intent>
+24-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:84:9-88:18
+25            <action android:name="android.intent.action.VIEW" />
+25-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:85:13-65
+25-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:85:21-62
+26
+27            <category android:name="android.intent.category.BROWSABLE" />
+27-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:86:13-74
+27-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:86:23-71
+28
+29            <data android:scheme="https" />
+29-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:87:13-44
+29-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:87:19-41
+30        </intent>
+31        <intent>
+31-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:89:9-93:18
+32            <action android:name="android.intent.action.VIEW" />
+32-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:85:13-65
+32-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:85:21-62
+33
+34            <category android:name="android.intent.category.APP_BROWSER" />
+34-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:91:13-76
+34-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:91:23-73
 35
-36    <uses-permission android:name="com.example.civic_auth_flutter.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-36-->[androidx.core:core:1.13.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
-36-->[androidx.core:core:1.13.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
-37
-38    <application
-39        android:name="android.app.Application"
-40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-40-->[androidx.core:core:1.13.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
-41        android:debuggable="true"
-42        android:extractNativeLibs="true"
-43        android:icon="@mipmap/ic_launcher"
-44        android:label="civic_auth_flutter" >
-45        <activity
-46            android:name="com.example.civic_auth_flutter.MainActivity"
-47            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-48            android:exported="true"
-49            android:hardwareAccelerated="true"
-50            android:launchMode="singleTop"
-51            android:taskAffinity=""
-52            android:theme="@style/LaunchTheme"
-53            android:windowSoftInputMode="adjustResize" >
-54            <meta-data
-55                android:name="io.flutter.embedding.android.NormalTheme"
-56                android:resource="@style/NormalTheme" />
-57
-58            <!-- Main launcher -->
-59            <intent-filter>
-60                <action android:name="android.intent.action.MAIN" />
-61
-62                <category android:name="android.intent.category.LAUNCHER" />
-63            </intent-filter>
-64
-65            <!-- Civic OAuth redirect intent filter -->
-66            <intent-filter android:autoVerify="true" >
-67                <action android:name="android.intent.action.VIEW" />
-67-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:26:13-65
-67-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:26:21-62
-68
-69                <category android:name="android.intent.category.DEFAULT" />
-69-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:47:17-76
-69-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:47:27-73
-70                <category android:name="android.intent.category.BROWSABLE" />
-70-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:28:13-74
-70-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:28:23-71
-71
-72                <data
-72-->/Users/princekumar/Desktop/civic_auth_flutter/android/app/src/main/AndroidManifest.xml:49:13-51
-73                    android:host="callback"
-74                    android:scheme="trustlink" />
+36            <data android:scheme="https" />
+36-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:87:13-44
+36-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:87:19-41
+37        </intent>
+38        <intent>
+38-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:94:9-97:18
+39            <action android:name="android.intent.action.PROCESS_TEXT" />
+39-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:95:13-73
+39-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:95:21-70
+40
+41            <data android:mimeType="text/plain" />
+41-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:87:13-44
+42        </intent>
+43    </queries>
+44
+45    <permission
+45-->[androidx.core:core:1.16.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/0f43509670beb1f53c1f6996445ca23a/transformed/core-1.16.0/AndroidManifest.xml:22:5-24:47
+46        android:name="com.example.civic_auth_flutter.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+46-->[androidx.core:core:1.16.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/0f43509670beb1f53c1f6996445ca23a/transformed/core-1.16.0/AndroidManifest.xml:23:9-81
+47        android:protectionLevel="signature" />
+47-->[androidx.core:core:1.16.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/0f43509670beb1f53c1f6996445ca23a/transformed/core-1.16.0/AndroidManifest.xml:24:9-44
+48
+49    <uses-permission android:name="com.example.civic_auth_flutter.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+49-->[androidx.core:core:1.16.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/0f43509670beb1f53c1f6996445ca23a/transformed/core-1.16.0/AndroidManifest.xml:26:5-97
+49-->[androidx.core:core:1.16.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/0f43509670beb1f53c1f6996445ca23a/transformed/core-1.16.0/AndroidManifest.xml:26:22-94
+50
+51    <application
+52        android:name="android.app.Application"
+53        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+53-->[androidx.core:core:1.16.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/0f43509670beb1f53c1f6996445ca23a/transformed/core-1.16.0/AndroidManifest.xml:28:18-86
+54        android:debuggable="true"
+55        android:enableOnBackInvokedCallback="true"
+56        android:extractNativeLibs="true"
+57        android:icon="@mipmap/ic_launcher"
+58        android:label="Civic Auth" >
+59        <activity
+60            android:name="com.example.civic_auth_flutter.MainActivity"
+61            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+62            android:exported="true"
+63            android:hardwareAccelerated="true"
+64            android:launchMode="singleTop"
+65            android:theme="@style/LaunchTheme"
+66            android:windowSoftInputMode="adjustResize" >
+67            <meta-data
+68                android:name="io.flutter.embedding.android.NormalTheme"
+69                android:resource="@style/NormalTheme" />
+70
+71            <intent-filter>
+72                <action android:name="android.intent.action.MAIN" />
+73
+74                <category android:name="android.intent.category.LAUNCHER" />
 75            </intent-filter>
-76        </activity>
-77
-78        <meta-data
-79            android:name="flutterEmbedding"
-80            android:value="2" />
-81
-82        <activity
-82-->[:flutter_appauth] /Users/princekumar/Desktop/civic_auth_flutter/build/flutter_appauth/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:9-12:45
-83            android:name="net.openid.appauth.RedirectUriReceiverActivity"
-83-->[:flutter_appauth] /Users/princekumar/Desktop/civic_auth_flutter/build/flutter_appauth/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:10:13-74
-84            android:exported="true"
-84-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:43:13-36
-85            android:theme="@style/Theme.AppCompat.Translucent.NoTitleBar" >
-85-->[:flutter_appauth] /Users/princekumar/Desktop/civic_auth_flutter/build/flutter_appauth/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:13-74
-86            <intent-filter>
-86-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:44:13-51:29
-87                <action android:name="android.intent.action.VIEW" />
-87-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:26:13-65
-87-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:26:21-62
-88
-89                <category android:name="android.intent.category.DEFAULT" />
-89-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:47:17-76
-89-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:47:27-73
-90                <category android:name="android.intent.category.BROWSABLE" />
-90-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:28:13-74
-90-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:28:23-71
-91
-92                <data android:scheme="civicdemo" />
-92-->/Users/princekumar/Desktop/civic_auth_flutter/android/app/src/main/AndroidManifest.xml:49:13-51
-93            </intent-filter>
-94        </activity>
-95        <activity
-95-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:35:9-40:77
-96            android:name="net.openid.appauth.AuthorizationManagementActivity"
-96-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:36:13-78
-97            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboard|keyboardHidden"
-97-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:37:13-115
-98            android:exported="false"
-98-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:38:13-37
-99            android:launchMode="singleTask"
-99-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:39:13-44
-100            android:theme="@style/Theme.AppCompat.Translucent.NoTitleBar" />
-100-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:40:13-74
-101
-102        <uses-library
-102-->[androidx.window:window:1.2.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
-103            android:name="androidx.window.extensions"
-103-->[androidx.window:window:1.2.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
-104            android:required="false" />
-104-->[androidx.window:window:1.2.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
-105        <uses-library
-105-->[androidx.window:window:1.2.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
-106            android:name="androidx.window.sidecar"
-106-->[androidx.window:window:1.2.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
-107            android:required="false" />
-107-->[androidx.window:window:1.2.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
-108
-109        <provider
-109-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
-110            android:name="androidx.startup.InitializationProvider"
-110-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
-111            android:authorities="com.example.civic_auth_flutter.androidx-startup"
-111-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
-112            android:exported="false" >
-112-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
-113            <meta-data
-113-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
-114                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-114-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
-115                android:value="androidx.startup" />
-115-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
-116            <meta-data
-116-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
-117                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-117-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
-118                android:value="androidx.startup" />
-118-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
-119        </provider>
-120
-121        <receiver
-121-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
-122            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-122-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
-123            android:directBootAware="false"
-123-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
-124            android:enabled="true"
-124-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
-125            android:exported="true"
-125-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
-126            android:permission="android.permission.DUMP" >
-126-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
-127            <intent-filter>
-127-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
-128                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-128-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
-128-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
-129            </intent-filter>
-130            <intent-filter>
-130-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
-131                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-131-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
-131-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
-132            </intent-filter>
-133            <intent-filter>
-133-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
-134                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-134-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
-134-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
-135            </intent-filter>
-136            <intent-filter>
-136-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
-137                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-137-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
-137-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
-138            </intent-filter>
-139        </receiver>
-140    </application>
-141
-142</manifest>
+76
+77            <meta-data
+78                android:name="flutter_appauth_redirect_scheme"
+79                android:value="trustlink" />
+80
+81            <intent-filter>
+82                <action android:name="android.intent.action.VIEW" />
+82-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:85:13-65
+82-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:85:21-62
+83
+84                <category android:name="android.intent.category.DEFAULT" />
+85                <category android:name="android.intent.category.BROWSABLE" />
+85-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:86:13-74
+85-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:86:23-71
+86
+87                <data
+87-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:87:13-44
+88                    android:host="callback"
+89                    android:scheme="trustlink" />
+89-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:87:19-41
+90            </intent-filter>
+91        </activity>
+92        <activity
+93            android:name="net.openid.appauth.AuthorizationManagementActivity"
+94            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboard|keyboardHidden"
+94-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:37:13-115
+95            android:exported="false"
+95-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:38:13-37
+96            android:launchMode="singleInstance"
+97            android:theme="@style/Theme.AppCompat.Translucent.NoTitleBar" />
+97-->[net.openid:appauth:0.11.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/1dca8576144c01ae2f21011cdbd09281/transformed/jetified-appauth-0.11.1/AndroidManifest.xml:40:13-74
+98        <activity
+99            android:name="net.openid.appauth.RedirectUriReceiverActivity"
+100            android:excludeFromRecents="true"
+101            android:exported="true" >
+102            <intent-filter>
+103                <action android:name="android.intent.action.VIEW" />
+103-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:85:13-65
+103-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:85:21-62
+104
+105                <category android:name="android.intent.category.DEFAULT" />
+106                <category android:name="android.intent.category.BROWSABLE" />
+106-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:86:13-74
+106-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:86:23-71
+107
+108                <data
+108-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:87:13-44
+109                    android:host="callback"
+110                    android:scheme="trustlink" />
+110-->/Users/princekumar/Desktop/wifi-link/android/app/src/main/AndroidManifest.xml:87:19-41
+111            </intent-filter>
+112        </activity>
+113
+114        <meta-data
+115            android:name="flutterEmbedding"
+116            android:value="2" />
+117
+118        <provider
+119            android:name="androidx.core.content.FileProvider"
+120            android:authorities="com.example.civic_auth_flutter.fileprovider"
+121            android:exported="false"
+122            android:grantUriPermissions="true" >
+123            <meta-data
+124                android:name="android.support.FILE_PROVIDER_PATHS"
+125                android:resource="@xml/file_paths" />
+126        </provider>
+127
+128        <service
+128-->[:geolocator_android] /Users/princekumar/Desktop/wifi-link/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:9-12:56
+129            android:name="com.baseflow.geolocator.GeolocatorLocationService"
+129-->[:geolocator_android] /Users/princekumar/Desktop/wifi-link/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:13-77
+130            android:enabled="true"
+130-->[:geolocator_android] /Users/princekumar/Desktop/wifi-link/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:10:13-35
+131            android:exported="false"
+131-->[:geolocator_android] /Users/princekumar/Desktop/wifi-link/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:13-37
+132            android:foregroundServiceType="location" />
+132-->[:geolocator_android] /Users/princekumar/Desktop/wifi-link/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:12:13-53
+133
+134        <activity
+134-->[com.google.android.gms:play-services-auth:20.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/1f95ad54b00c2bfb9aac5a844cf00ad7/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
+135            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+135-->[com.google.android.gms:play-services-auth:20.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/1f95ad54b00c2bfb9aac5a844cf00ad7/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
+136            android:excludeFromRecents="true"
+136-->[com.google.android.gms:play-services-auth:20.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/1f95ad54b00c2bfb9aac5a844cf00ad7/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
+137            android:exported="false"
+137-->[com.google.android.gms:play-services-auth:20.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/1f95ad54b00c2bfb9aac5a844cf00ad7/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
+138            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+138-->[com.google.android.gms:play-services-auth:20.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/1f95ad54b00c2bfb9aac5a844cf00ad7/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
+139        <!--
+140            Service handling Google Sign-In user revocation. For apps that do not integrate with
+141            Google Sign-In, this service will never be started.
+142        -->
+143        <service
+143-->[com.google.android.gms:play-services-auth:20.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/1f95ad54b00c2bfb9aac5a844cf00ad7/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
+144            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+144-->[com.google.android.gms:play-services-auth:20.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/1f95ad54b00c2bfb9aac5a844cf00ad7/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
+145            android:exported="true"
+145-->[com.google.android.gms:play-services-auth:20.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/1f95ad54b00c2bfb9aac5a844cf00ad7/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
+146            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+146-->[com.google.android.gms:play-services-auth:20.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/1f95ad54b00c2bfb9aac5a844cf00ad7/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
+147            android:visibleToInstantApps="true" />
+147-->[com.google.android.gms:play-services-auth:20.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/1f95ad54b00c2bfb9aac5a844cf00ad7/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
+148
+149        <activity
+149-->[com.google.android.gms:play-services-base:18.3.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/b93785a04fcd49acabbaa600426866db/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:20:9-22:45
+150            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+150-->[com.google.android.gms:play-services-base:18.3.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/b93785a04fcd49acabbaa600426866db/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:20:19-85
+151            android:exported="false"
+151-->[com.google.android.gms:play-services-base:18.3.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/b93785a04fcd49acabbaa600426866db/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:22:19-43
+152            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+152-->[com.google.android.gms:play-services-base:18.3.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/b93785a04fcd49acabbaa600426866db/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:21:19-78
+153
+154        <meta-data
+154-->[com.google.android.gms:play-services-basement:18.3.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/48bb13e58e49cdf1e6377472107b28a8/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:21:9-23:69
+155            android:name="com.google.android.gms.version"
+155-->[com.google.android.gms:play-services-basement:18.3.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/48bb13e58e49cdf1e6377472107b28a8/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:22:13-58
+156            android:value="@integer/google_play_services_version" />
+156-->[com.google.android.gms:play-services-basement:18.3.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/48bb13e58e49cdf1e6377472107b28a8/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:23:13-66
+157
+158        <uses-library
+158-->[androidx.window:window:1.2.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+159            android:name="androidx.window.extensions"
+159-->[androidx.window:window:1.2.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+160            android:required="false" />
+160-->[androidx.window:window:1.2.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+161        <uses-library
+161-->[androidx.window:window:1.2.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+162            android:name="androidx.window.sidecar"
+162-->[androidx.window:window:1.2.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+163            android:required="false" />
+163-->[androidx.window:window:1.2.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+164
+165        <provider
+165-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+166            android:name="androidx.startup.InitializationProvider"
+166-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
+167            android:authorities="com.example.civic_auth_flutter.androidx-startup"
+167-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
+168            android:exported="false" >
+168-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
+169            <meta-data
+169-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+170                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+170-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+171                android:value="androidx.startup" />
+171-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/princekumar/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+172            <meta-data
+172-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+173                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+173-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+174                android:value="androidx.startup" />
+174-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+175        </provider>
+176
+177        <receiver
+177-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+178            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+178-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+179            android:directBootAware="false"
+179-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+180            android:enabled="true"
+180-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+181            android:exported="true"
+181-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+182            android:permission="android.permission.DUMP" >
+182-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+183            <intent-filter>
+183-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+184                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+184-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+184-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+185            </intent-filter>
+186            <intent-filter>
+186-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+187                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+187-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+187-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+188            </intent-filter>
+189            <intent-filter>
+189-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+190                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+190-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+190-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+191            </intent-filter>
+192            <intent-filter>
+192-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+193                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+193-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+193-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/princekumar/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+194            </intent-filter>
+195        </receiver>
+196    </application>
+197
+198</manifest>

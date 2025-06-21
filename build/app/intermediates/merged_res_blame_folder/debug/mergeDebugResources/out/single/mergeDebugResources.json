@@ -1,26 +1,30 @@
 [
     {
-        "merged": "com.example.civic_auth_flutter.app-debug-31:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.example.civic_auth_flutter.app-main-26:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.example.civic_auth_flutter.app-debug-35:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.civic_auth_flutter.app-main-30:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.civic_auth_flutter.app-debug-31:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.example.civic_auth_flutter.app-main-26:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.example.civic_auth_flutter.app-debug-35:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.civic_auth_flutter.app-main-30:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.civic_auth_flutter.app-debug-31:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.example.civic_auth_flutter.app-main-26:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.example.civic_auth_flutter.app-debug-35:/xml_file_paths.xml.flat",
+        "source": "com.example.civic_auth_flutter.app-main-30:/xml/file_paths.xml"
     },
     {
-        "merged": "com.example.civic_auth_flutter.app-debug-31:/drawable-v21_launch_background.xml.flat",
-        "source": "com.example.civic_auth_flutter.app-main-26:/drawable-v21/launch_background.xml"
+        "merged": "com.example.civic_auth_flutter.app-debug-35:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.civic_auth_flutter.app-main-30:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.civic_auth_flutter.app-debug-31:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.example.civic_auth_flutter.app-main-26:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.example.civic_auth_flutter.app-debug-35:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.civic_auth_flutter.app-main-30:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.civic_auth_flutter.app-debug-31:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.example.civic_auth_flutter.app-main-26:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.example.civic_auth_flutter.app-debug-35:/drawable-v21_launch_background.xml.flat",
+        "source": "com.example.civic_auth_flutter.app-main-30:/drawable-v21/launch_background.xml"
+    },
+    {
+        "merged": "com.example.civic_auth_flutter.app-debug-35:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.civic_auth_flutter.app-main-30:/mipmap-hdpi/ic_launcher.png"
     }
 ]
