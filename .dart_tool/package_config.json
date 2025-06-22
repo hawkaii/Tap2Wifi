@@ -7,7 +7,6 @@
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
-    //Hello Tb2WiFI
     {
       "name": "boolean_selector",
       "rootUri": "file:///Users/princekumar/.pub-cache/hosted/pub.dev/boolean_selector-2.1.2",
