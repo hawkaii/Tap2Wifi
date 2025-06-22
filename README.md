@@ -23,7 +23,23 @@ Imagine walking into a café, co-working space, or airport and connecting to sec
 We leverage **Civic OAuth** to authenticate users securely and privately. Unlike traditional email or social logins, Civic allows users to prove their identity using decentralized, blockchain-powered credentials—no passwords shared, no personal data stored centrally.
 ---
 
-### 2. **Community WiFi Archives & Seamless Connection**
+### 2. **AI-Powered Travel Recommendations (Gemini AI Integration)**
+
+Tap2Wifi now features **AI-powered travel recommendations** using Google Gemini AI. This enhancement enables users to discover interesting stops (landmarks, attractions, etc.) between two locations, with each stop showing nearby WiFi networks for seamless connectivity.
+
+**Key Features:**
+- **Gemini AI Integration:** The backend uses Google Gemini AI to generate travel recommendations and suggest stops along a route.
+- **WiFi Network Data:** For each recommended stop, users can view available WiFi networks nearby.
+- **New API Endpoints:**
+  - `GET /api/gemini/recommendstops`: Returns recommended stops between two coordinates.
+  - `GET /api/gemini/recommendstopswifi`: Combines stop recommendations with nearby WiFi network data.
+  - `POST /api/wifi/nearby/stops`: Lists WiFi networks near specified stops.
+
+> **Note:** These features are currently implemented in the backend and can be explored by visiting the backend repository: [https://github.com/hawkaii/wifi-golang-backend](https://github.com/hawkaii/wifi-golang-backend). Frontend integration is in progress.
+
+---
+
+### 3. **Community WiFi Archives & Seamless Connection**
 
 Tap2Wifi maintains a public archive of WiFi networks, where anyone can upload details about available WiFi hotspots (such as SSID, location, and access info). Authenticated users can browse these archives and connect to a listed WiFi network after confirming their physical location, ensuring secure and relevant access.
 
@@ -39,15 +55,6 @@ Tap2Wifi maintains a public archive of WiFi networks, where anyone can upload de
 - **Travel and emergencies**: Users can stay connected in new places or when mobile data fails, thanks to the shared knowledge base.
 
 ---
-
-### 3. **Gemini AI for Probable Stop Prediction & Preemptive Data Download**
-
-We harness **Gemini AI** to keep users connected, even on the move (e.g., in transit, on public transport, or during handoffs between hotspots).
-
-**How it works:**
-- When a user is authenticated and moving, Gemini AI analyzes their location, historical journeys, and calendar data (with permission) to predict probable stops or weak connectivity zones.
-- The backend schedules or suggests preemptive downloading of essential data (emails, maps, entertainment) when strong connectivity is available.
-- This ensures users have access to critical content even when offline or during network transitions.
 
 **Benefits:**
 - **Always-on experience**: Less frustration from dropped connections or slow downloads.
