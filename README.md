@@ -21,6 +21,7 @@ Imagine walking into a café, co-working space, or airport and connecting to sec
 ### 1. **Civic OAuth for Secure, Decentralized Identity**
 
 We leverage **Civic OAuth** to authenticate users securely and privately. Unlike traditional email or social logins, Civic allows users to prove their identity using decentralized, blockchain-powered credentials—no passwords shared, no personal data stored centrally.
+
 ---
 
 ### 2. **AI-Powered Travel Recommendations (Gemini AI Integration)**
