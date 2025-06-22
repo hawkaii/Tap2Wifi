@@ -1,6 +1,3 @@
-import 'dart:convert';
-import 'dart:math';
-
 import 'package:civic_auth_flutter/app_routes.dart';
 import 'package:civic_auth_flutter/screens/nearby_current_location.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +22,14 @@ class _LoginScreenState extends State<LoginScreen> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.logout_outlined),
+              onPressed: () {
+                Get.toNamed(AppRoutes.splash);
+              },
+            ),
+          ],
           backgroundColor: Colors.black.withOpacity(0.5),
           title: Text(
             "Tap 2 WiFi",

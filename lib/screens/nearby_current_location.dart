@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
+
 import '../services/api_services.dart';
 
 class WifiNearbyFromCurrentLocation extends StatefulWidget {
@@ -32,6 +33,7 @@ class _WifiNearbyFromCurrentLocationState
       final position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high,
       );
+
       final latitude = position.latitude;
       final longitude = position.longitude;
 
@@ -54,9 +56,7 @@ class _WifiNearbyFromCurrentLocationState
 
       print('[SUCCESS] WiFi data received: $_wifiList');
     } catch (e) {
-      setState(() {
-        _isLoading = false;
-      });
+      setState(() => _isLoading = false);
       print('[ERROR] Failed to fetch WiFi data: $e');
       Get.snackbar(
         'Error',
@@ -110,6 +110,43 @@ class _WifiNearbyFromCurrentLocationState
     );
   }
 
+  void _showAuthenticatingDialog() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder:
+          (_) => AlertDialog(
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                CircularProgressIndicator(),
+                SizedBox(height: 20),
+                Text(
+                  'Authenticating and checking location.\nPlease wait...',
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+    );
+
+    // After 3 seconds, dismiss dialog and show password
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.back(); // close loading dialog
+      _showStaticPasswordDialog();
+    });
+  }
+
+  void _showStaticPasswordDialog() {
+    Get.defaultDialog(
+      title: 'WiFi Password',
+      middleText: 'Password: Tint@156',
+      textConfirm: 'OK',
+      confirmTextColor: Colors.white,
+      onConfirm: () => Get.back(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -140,6 +177,10 @@ class _WifiNearbyFromCurrentLocationState
                             itemCount: _wifiList.length,
                             itemBuilder: (context, index) {
                               final wifi = _wifiList[index];
+                              final double? distance = double.tryParse(
+                                wifi['distance']?.toString() ?? '',
+                              );
+
                               return ListTile(
                                 leading: const Icon(
                                   Icons.wifi,
@@ -147,8 +188,17 @@ class _WifiNearbyFromCurrentLocationState
                                 ),
                                 title: Text(wifi['ssid'] ?? 'Unknown'),
                                 subtitle: Text(
-                                  'Signal: ${wifi['signal'] ?? 'N/A'}',
+                                  'Description: ${wifi['description'] ?? 'N/A'}',
                                 ),
+                                trailing: Text(
+                                  distance != null
+                                      ? 'Distance: ${distance.toStringAsFixed(2)} m'
+                                      : 'Distance: N/A',
+                                  style: const TextStyle(
+                                    color: Colors.blueGrey,
+                                  ),
+                                ),
+                                onTap: _showAuthenticatingDialog,
                               );
                             },
                           ),

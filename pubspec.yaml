@@ -39,6 +39,9 @@ dependencies:
   http: ^1.4.0
   get: ^4.6.6
   geolocator: ^14.0.1
+  geocoding: ^4.0.0
+  get_storage: ^2.0.3
+
   
   
 dev_dependencies:

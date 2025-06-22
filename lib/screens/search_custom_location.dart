@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:civic_auth_flutter/services/api_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -90,6 +89,23 @@ class _SearchCustomLocationState extends State<SearchCustomLocation> {
       });
       Get.snackbar('Error', 'Network error occurred');
     }
+  }
+
+  Future<void> _showDialog(String message) async {
+    await showDialog(
+      context: context,
+      builder:
+          (_) => AlertDialog(
+            title: const Text('Permission Required'),
+            content: Text(message),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text('OK'),
+              ),
+            ],
+          ),
+    );
   }
 
   void _navigateToWifiListScreen(List<dynamic> wifiData, String location) {
@@ -245,6 +261,43 @@ class WifiListScreen extends StatelessWidget {
     required this.location,
   }) : super(key: key);
 
+  void _showAuthenticatingDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder:
+          (_) => AlertDialog(
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                CircularProgressIndicator(),
+                SizedBox(height: 20),
+                Text(
+                  'Authenticating and checking location.\nPlease wait...',
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+    );
+
+    // Wait 3 seconds, then show password
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.back(); // Close the progress dialog
+      _showStaticPasswordDialog();
+    });
+  }
+
+  void _showStaticPasswordDialog() {
+    Get.defaultDialog(
+      title: 'WiFi Password',
+      middleText: 'Password: Tint@156',
+      textConfirm: 'OK',
+      confirmTextColor: Colors.white,
+      onConfirm: () => Get.back(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -256,10 +309,21 @@ class WifiListScreen extends StatelessWidget {
         itemCount: wifiData.length,
         itemBuilder: (context, index) {
           final wifi = wifiData[index];
+          final double? distance = double.tryParse(
+            wifi['distance']?.toString() ?? '',
+          );
+
           return ListTile(
-            leading: const Icon(Icons.wifi),
-            title: Text(wifi['ssid'] ?? 'Unknown SSID'),
-            subtitle: Text('Signal: ${wifi['signal'] ?? 'N/A'}'),
+            leading: const Icon(Icons.wifi, color: Colors.green),
+            title: Text(wifi['ssid'] ?? 'Unknown'),
+            subtitle: Text('Description: ${wifi['description'] ?? 'N/A'}'),
+            trailing: Text(
+              distance != null
+                  ? 'Distance: ${distance.toStringAsFixed(2)} m'
+                  : 'Distance: N/A',
+              style: const TextStyle(color: Colors.blueGrey),
+            ),
+            onTap: () => _showAuthenticatingDialog(context),
           );
         },
       ),

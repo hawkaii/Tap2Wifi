@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+
+import '../services/api_services.dart';
 
 class WiFiEntryPage extends StatefulWidget {
   const WiFiEntryPage({super.key});
@@ -12,57 +15,98 @@ class _WiFiEntryPageState extends State<WiFiEntryPage> {
   final _wifiNameController = TextEditingController();
   final _passwordController = TextEditingController();
   final _descriptionController = TextEditingController();
-  final _locationController = TextEditingController();
 
   bool _isLoading = false;
   bool _obscurePassword = true;
+  Position? _currentPosition;
+
+  @override
+  void initState() {
+    super.initState();
+    _getCurrentLocation();
+  }
 
   @override
   void dispose() {
     _wifiNameController.dispose();
     _passwordController.dispose();
     _descriptionController.dispose();
-    _locationController.dispose();
     super.dispose();
   }
 
-  Future<void> _submitWiFiData() async {
-    if (!_formKey.currentState!.validate()) {
+  Future<void> _getCurrentLocation() async {
+    try {
+      bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+      if (!serviceEnabled) {
+        _showErrorDialog('Please enable location services.');
+        return;
+      }
+
+      LocationPermission permission = await Geolocator.checkPermission();
+      if (permission == LocationPermission.denied) {
+        permission = await Geolocator.requestPermission();
+        if (permission == LocationPermission.denied) {
+          _showErrorDialog('Location permission denied.');
+          return;
+        }
+      }
+
+      if (permission == LocationPermission.deniedForever) {
+        _showErrorDialog('Location permission permanently denied.');
+        return;
+      }
+
+      final position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high,
+      );
+
+      setState(() {
+        _currentPosition = position;
+      });
+    } catch (e) {
+      _showErrorDialog('Failed to get location: $e');
+    }
+  }
+
+  Future<void> submitWiFiDataToServer() async {
+    if (!_formKey.currentState!.validate() || _isLoading) return;
+
+    if (_currentPosition == null) {
+      _showErrorDialog("Unable to access current location.");
       return;
     }
 
-    setState(() {
-      _isLoading = true;
-    });
+    setState(() => _isLoading = true);
 
-    // Simulate API call - replace with your actual database update logic
+    final wifiData = {
+      "ssid": _wifiNameController.text.trim(),
+      "password": _passwordController.text.trim(),
+      "description": _descriptionController.text.trim(),
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          _currentPosition!.longitude,
+          _currentPosition!.latitude,
+        ],
+        "address": "", // Empty as we removed the field
+      },
+    };
+
     try {
-      await Future.delayed(
-        const Duration(seconds: 2),
-      ); // Simulating network delay
+      final response = await ApiService.postRequest(
+        'api/wifi/scan',
+        wifiData,
+        headers: {'Authorization': 'Bearer testtoken'},
+      );
 
-      // Here you would make your actual API call
-      // Example:
-      // final response = await http.post(
-      //   Uri.parse('YOUR_API_ENDPOINT'),
-      //   headers: {'Content-Type': 'application/json'},
-      //   body: json.encode({
-      //     'wifiName': _wifiNameController.text.trim(),
-      //     'password': _passwordController.text.trim(),
-      //     'description': _descriptionController.text.trim(),
-      //     'location': _locationController.text.trim(),
-      //   }),
-      // );
-
-      // For now, we'll just show success
+      print('[SUCCESS] WiFi data posted: $response');
       _showSuccessDialog();
       _clearForm();
     } catch (e) {
+      print('[ERROR] Failed to post WiFi data: $e');
       _showErrorDialog('Failed to save WiFi data: $e');
     } finally {
-      setState(() {
-        _isLoading = false;
-      });
+      setState(() => _isLoading = false);
     }
   }
 
@@ -70,54 +114,53 @@ class _WiFiEntryPageState extends State<WiFiEntryPage> {
     _wifiNameController.clear();
     _passwordController.clear();
     _descriptionController.clear();
-    _locationController.clear();
   }
 
   void _showSuccessDialog() {
     showDialog(
       context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Row(
-            children: [
-              Icon(Icons.check_circle, color: Colors.green),
-              SizedBox(width: 8),
-              Text('Success'),
+      builder:
+          (_) => AlertDialog(
+            title: const Row(
+              children: [
+                Icon(Icons.check_circle, color: Colors.green),
+                SizedBox(width: 8),
+                Text('Success'),
+              ],
+            ),
+            content: const Text(
+              'WiFi information has been saved successfully!',
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text('OK'),
+              ),
             ],
           ),
-          content: const Text('WiFi information has been saved successfully!'),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('OK'),
-            ),
-          ],
-        );
-      },
     );
   }
 
   void _showErrorDialog(String message) {
     showDialog(
       context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Row(
-            children: [
-              Icon(Icons.error, color: Colors.red),
-              SizedBox(width: 8),
-              Text('Error'),
+      builder:
+          (_) => AlertDialog(
+            title: const Row(
+              children: [
+                Icon(Icons.error, color: Colors.red),
+                SizedBox(width: 8),
+                Text('Error'),
+              ],
+            ),
+            content: Text(message),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text('OK'),
+              ),
             ],
           ),
-          content: Text(message),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('OK'),
-            ),
-          ],
-        );
-      },
     );
   }
 
@@ -128,43 +171,32 @@ class _WiFiEntryPageState extends State<WiFiEntryPage> {
         title: const Text('Add WiFi Network'),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
-        elevation: 2,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const SizedBox(height: 20),
-
-              // WiFi Name Field
               TextFormField(
                 controller: _wifiNameController,
                 decoration: const InputDecoration(
                   labelText: 'WiFi Network Name',
-                  hintText: 'Enter the WiFi network name (SSID)',
                   prefixIcon: Icon(Icons.wifi),
                   border: OutlineInputBorder(),
                 ),
-                validator: (value) {
-                  if (value == null || value.trim().isEmpty) {
-                    return 'Please enter the WiFi network name';
-                  }
-                  return null;
-                },
+                validator:
+                    (value) =>
+                        value == null || value.trim().isEmpty
+                            ? 'Enter SSID'
+                            : null,
               ),
-
               const SizedBox(height: 16),
-
-              // Password Field
               TextFormField(
                 controller: _passwordController,
                 obscureText: _obscurePassword,
                 decoration: InputDecoration(
                   labelText: 'WiFi Password',
-                  hintText: 'Enter the WiFi password',
                   prefixIcon: const Icon(Icons.lock),
                   suffixIcon: IconButton(
                     icon: Icon(
@@ -180,85 +212,40 @@ class _WiFiEntryPageState extends State<WiFiEntryPage> {
                   ),
                   border: const OutlineInputBorder(),
                 ),
-                validator: (value) {
-                  if (value == null || value.trim().isEmpty) {
-                    return 'Please enter the WiFi password';
-                  }
-                  if (value.length < 4) {
-                    return 'Password must be at least 4 characters long';
-                  }
-                  return null;
-                },
+                validator:
+                    (value) =>
+                        value == null || value.length < 4
+                            ? 'Min 4 characters'
+                            : null,
               ),
-
               const SizedBox(height: 16),
-
-              // Description Field
               TextFormField(
                 controller: _descriptionController,
                 maxLines: 3,
                 decoration: const InputDecoration(
                   labelText: 'Description',
-                  hintText: 'Enter a description for this WiFi network',
                   prefixIcon: Icon(Icons.description),
                   border: OutlineInputBorder(),
                 ),
-                validator: (value) {
-                  if (value == null || value.trim().isEmpty) {
-                    return 'Please enter a description';
-                  }
-                  return null;
-                },
+                validator:
+                    (value) =>
+                        value == null || value.trim().isEmpty
+                            ? 'Enter a description'
+                            : null,
               ),
-
-              const SizedBox(height: 16),
-
-              // Location Field
-              TextFormField(
-                controller: _locationController,
-                decoration: const InputDecoration(
-                  labelText: 'Location/Place',
-                  hintText: 'Enter the location where this WiFi is available',
-                  prefixIcon: Icon(Icons.location_on),
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.trim().isEmpty) {
-                    return 'Please enter the location';
-                  }
-                  return null;
-                },
-              ),
-
               const SizedBox(height: 24),
-
-              // Submit Button
               ElevatedButton(
-                onPressed: _isLoading ? null : _submitWiFiData,
+                onPressed: _isLoading ? null : submitWiFiDataToServer,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
-                  foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
                 ),
                 child:
                     _isLoading
-                        ? const Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              height: 20,
-                              width: 20,
-                              child: CircularProgressIndicator(
-                                strokeWidth: 2,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(width: 12),
-                            Text('Saving...'),
-                          ],
+                        ? const SizedBox(
+                          height: 24,
+                          width: 24,
+                          child: CircularProgressIndicator(color: Colors.white),
                         )
                         : const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -269,18 +256,9 @@ class _WiFiEntryPageState extends State<WiFiEntryPage> {
                           ],
                         ),
               ),
-
-              const SizedBox(height: 16),
-
-              // Clear Button
+              const SizedBox(height: 12),
               OutlinedButton(
                 onPressed: _isLoading ? null : _clearForm,
-                style: OutlinedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

@@ -29,20 +29,30 @@ class ApiService {
   // Reusable POST request
   static Future<dynamic> postRequest(
     String endpoint,
-    Map<String, dynamic> body,
-  ) async {
+    Map<String, dynamic> body, {
+    Map<String, String>? headers,
+  }) async {
     try {
       final uri = Uri.parse('$baseUrl$endpoint');
       final response = await http.post(
         uri,
-        headers: {'Content-Type': 'application/json'},
+        headers: {
+          'Content-Type': 'application/json',
+          if (headers != null) ...headers,
+        },
         body: jsonEncode(body),
       );
 
       if (response.statusCode == 200 || response.statusCode == 201) {
-        return jsonDecode(response.body);
+        try {
+          return jsonDecode(response.body); // try parsing JSON
+        } catch (_) {
+          return response.body; // fallback to raw body
+        }
       } else {
-        throw Exception('POST request failed: ${response.statusCode}');
+        throw Exception(
+          'POST failed with ${response.statusCode}: ${response.body}',
+        );
       }
     } catch (e) {
       throw Exception('POST request error: $e');
