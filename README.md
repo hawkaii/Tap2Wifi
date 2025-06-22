@@ -135,7 +135,7 @@ Our backend is built from the ground up in **Go (Golang)** for performance, reli
 
 ---
 
-## 🤝 Contributing
+## 🤝 Contributing**
 
 We welcome contributions! Fork the repo, make your changes, and submit a PR. For major features or suggestions, open an issue to discuss your idea.
 
